@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Empresa;
 use App\Endereco;
+use App\Profissao;
 
 class Funcionario extends Model
 {
@@ -14,6 +15,7 @@ class Funcionario extends Model
         'usuario_id',
         'empresa_id',
         'endereco_id',
+        'profissao_id',
         
     ];
     protected $table = 'funcionarios';
@@ -26,5 +28,8 @@ class Funcionario extends Model
     }
     public function endereco(){
         return $this->belongsTo(Endereco::class);
+    }
+    public function profissao(){
+        return $this->belongsTo(profissao::class);
     }
 }
